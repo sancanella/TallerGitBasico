@@ -1,4 +1,4 @@
-"""
+﻿"""
 Autor: X
 """
 
@@ -16,7 +16,7 @@ def esPrimo(n):
 	
     #El rango de 2 hasta n
     for i in range(2, n):
-        if n / i == 1:	return False
+        if n % i == 0:	return False
 	
     return True
 
@@ -29,8 +29,11 @@ def esPrimoIntervalo(i, k):
     return [(x, esPrimo(x)) for x in range(i, k)]
 
 def cuantosDivisores(n):
-    # Devolver la cantidad de divisores que tiene el número, incluyendo 1 y a sí mismo
-
+    contador = 0
+    for i in range(1,n):
+	if n % i ==0:
+		contador = contador +1
+    return contador
 
 """
 #Probando que funciona <<esPrimo(n)>>
